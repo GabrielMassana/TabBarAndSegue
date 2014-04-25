@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController ()
 
@@ -20,10 +21,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)go:(id)sender
+{
+    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    delegate.iAbreCotizacion = 1;
+    
+    self.tabBarController.selectedIndex = 1;
+}
 @end
